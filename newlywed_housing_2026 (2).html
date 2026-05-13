@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>신혼부부 주거지원 총정리 2026</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f8f7f4;
+    --surface: #ffffff;
+    --surface2: #f2f0ec;
+    --border: #e8e4de;
+    --text: #1a1714;
+    --text-sub: #6b6560;
+    --text-muted: #9e9790;
+    --accent: #c8522a;
+    --accent-light: #f5ede8;
+    --accent2: #2a6bc8;
+    --accent2-light: #e8eff8;
+    --green: #2a7a4a;
+    --green-light: #e8f4ed;
+    --red: #c82a2a;
+    --gold: #b8860b;
+    --gold-light: #fdf6e3;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-md: 0 4px 24px rgba(0,0,0,0.10);
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  /* ─── INSTAGRAM ─── */
+  .insta-wrap { display: flex; flex-direction: column; align-items: center; padding: 20px 16px; }
+  .insta-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 28px; border-radius: 50px;
+    background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #fff; font-family: 'Pretendard', sans-serif;
+    font-size: clamp(14px, 3.5vw, 16px); font-weight: 700;
+    text-decoration: none; box-shadow: 0 4px 20px rgba(220,39,67,0.35);
+    transition: transform 0.2s, box-shadow 0.2s; min-height: 52px;
+  }
+  .insta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(220,39,67,0.45); }
+  .insta-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .insta-label { font-size: clamp(12px,3vw,14px); color: var(--text-sub); text-align: center; margin-bottom: 8px; font-weight: 500; }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: linear-gradient(160deg, #1a2a4a 0%, #2a3d6b 60%, #1e4a3a 100%);
+    color: #fff; padding: clamp(48px,8vw,96px) 16px clamp(40px,6vw,72px);
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 60%, rgba(200,82,42,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 75% 20%, rgba(42,107,200,0.15) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3); border-radius: 50px;
+    padding: 6px 18px; font-size: clamp(12px,3vw,14px); font-weight: 600;
+    letter-spacing: 0.05em; margin-bottom: 20px; backdrop-filter: blur(8px);
+  }
+  .hero h1 { font-size: clamp(26px,6vw,52px); font-weight: 800; line-height: 1.25; margin-bottom: 12px; letter-spacing: -0.02em; }
+  .hero h1 span { color: #f5c842; }
+  .hero-desc { font-size: clamp(14px,3.5vw,18px); color: rgba(255,255,255,0.78); max-width: 560px; margin: 0 auto 36px; }
+  .stat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; max-width: 680px; margin: 0 auto; }
+  @media (min-width:600px) { .stat-grid { grid-template-columns: repeat(4,1fr); } }
+  .stat-card { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: var(--radius-sm); padding: 18px 12px; backdrop-filter: blur(10px); }
+  .stat-card .val { font-size: clamp(20px,5vw,28px); font-weight: 800; color: #f5c842; display: block; line-height: 1.1; margin-bottom: 4px; }
+  .stat-card .lbl { font-size: clamp(11px,2.8vw,13px); color: rgba(255,255,255,0.72); font-weight: 500; }
+
+  /* ─── LAYOUT ─── */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+  .section { padding: clamp(40px,7vw,80px) 0; }
+  .divider { height: 1px; background: var(--border); }
+  .section-title-row { display: flex; align-items: center; margin-bottom: 8px; }
+  .sec-num { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 15px; font-weight: 800; margin-right: 10px; flex-shrink: 0; }
+  .section-title { font-size: clamp(20px,5vw,28px); font-weight: 800; letter-spacing: -0.02em; }
+  .section-title span { color: var(--accent); }
+  .section-desc { font-size: clamp(14px,3.5vw,16px); color: var(--text-sub); margin-bottom: 28px; }
+
+  /* ─── POLICY BLOCK ─── */
+  .policy-block {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); box-shadow: var(--shadow);
+    overflow: hidden; margin-bottom: 24px;
+    transition: box-shadow 0.2s;
+  }
+  .policy-block:hover { box-shadow: var(--shadow-md); }
+  .pb-blue   { border-top: 4px solid #2a6bc8; }
+  .pb-orange { border-top: 4px solid #c8522a; }
+  .pb-green  { border-top: 4px solid #2a7a4a; }
+  .pb-purple { border-top: 4px solid #7a2ac8; }
+  .pb-teal   { border-top: 4px solid #2a8a8a; }
+  .pb-red    { border-top: 4px solid #c82a2a; }
+
+  .policy-header { padding: 22px 22px 18px; }
+  .policy-num-badge { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; }
+  .policy-header h3 { font-size: clamp(16px,4vw,20px); font-weight: 800; letter-spacing: -0.01em; margin-bottom: 10px; }
+  .policy-meta { font-size: clamp(13px,3.3vw,14px); color: var(--text-sub); line-height: 1.8; }
+  .policy-meta strong { color: var(--text); font-weight: 700; }
+  .policy-tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .tag { display: inline-block; padding: 4px 11px; border-radius: 50px; font-size: 12px; font-weight: 600; }
+  .tag-blue   { background: var(--accent2-light); color: var(--accent2); }
+  .tag-orange { background: var(--accent-light);  color: var(--accent);  }
+  .tag-green  { background: var(--green-light);   color: var(--green);   }
+  .tag-gold   { background: var(--gold-light);    color: var(--gold);    }
+  .tag-purple { background: #f3eeff; color: #7a2ac8; }
+  .tag-teal   { background: #e6f7f7; color: #2a8a8a; }
+
+  /* ─── POLICY TABLE ─── */
+  .policy-table-wrap {
+    border-top: 1px solid var(--border); background: var(--surface2);
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+  }
+  .policy-table-label { font-size: 12px; font-weight: 700; color: var(--text-muted); letter-spacing: 0.06em; padding: 12px 20px 4px; text-transform: uppercase; }
+  .scroll-hint { font-size: 11px; color: var(--text-muted); padding: 0 20px 6px; display: none; }
+  @media (max-width:599px) { .scroll-hint { display: block; } }
+  .policy-table-wrap table { width: 100%; border-collapse: collapse; min-width: 360px; }
+  .policy-table-wrap thead { background: rgba(0,0,0,0.06); }
+  .policy-table-wrap thead th { padding: 10px 14px; font-size: clamp(12px,3vw,13px); font-weight: 700; text-align: center; color: var(--text); white-space: nowrap; }
+  .policy-table-wrap tbody tr { border-top: 1px solid var(--border); }
+  .policy-table-wrap tbody tr:hover { background: rgba(0,0,0,0.025); }
+  .policy-table-wrap tbody td { padding: 10px 14px; font-size: clamp(12px,3.2vw,13px); text-align: center; color: var(--text-sub); white-space: nowrap; }
+  .policy-table-wrap tbody td:first-child { text-align: left; font-weight: 600; color: var(--text); }
+  .rate-best { color: var(--accent) !important; font-weight: 800 !important; }
+  .rate-good { color: var(--accent2) !important; font-weight: 700 !important; }
+  .rate-ok   { color: var(--green) !important; font-weight: 700 !important; }
+  .highlight-row { background: rgba(245,200,66,0.10) !important; }
+  .table-note { padding: 8px 16px 12px; font-size: 12px; color: var(--text-muted); }
+
+  /* ─── USE LIST ─── */
+  .use-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width:600px) { .use-grid { grid-template-columns: repeat(2,1fr); } }
+  .use-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 20px; box-shadow: var(--shadow); }
+  .use-box h4 { font-size: clamp(14px,3.5vw,16px); font-weight: 800; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .use-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .dot-green { background: var(--green); }
+  .dot-red   { background: var(--red); }
+  .use-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .use-list li { display: flex; align-items: flex-start; gap: 10px; font-size: clamp(13px,3.3vw,14px); color: var(--text-sub); line-height: 1.5; }
+  .use-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+
+  /* ─── TIP CARDS ─── */
+  .tip-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width:520px) { .tip-grid { grid-template-columns: repeat(2,1fr); } }
+  .tip-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 18px; box-shadow: var(--shadow); display: flex; gap: 14px; align-items: flex-start; }
+  .tip-icon { font-size: 28px; line-height: 1; flex-shrink: 0; }
+  .tip-card h4 { font-size: clamp(14px,3.5vw,15px); font-weight: 800; margin-bottom: 5px; }
+  .tip-card p { font-size: clamp(12px,3vw,13px); color: var(--text-sub); line-height: 1.6; }
+
+  /* ─── CHECKLIST ─── */
+  .checklist { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; box-shadow: var(--shadow); }
+  .check-item { display: flex; align-items: flex-start; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--border); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .check-item:last-child { border-bottom: none; }
+  .check-box { width: 22px; height: 22px; border: 2px solid var(--border); border-radius: 6px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 1px; }
+  .check-box.checked { background: var(--green); border-color: var(--green); }
+  .check-box.checked::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 800; }
+  .check-label { font-size: clamp(13px,3.3vw,15px); color: var(--text-sub); line-height: 1.5; transition: color 0.2s; }
+  .check-item.checked .check-label { color: var(--text-muted); text-decoration: line-through; }
+
+  /* ─── FAQ ─── */
+  .faq-list { display: flex; flex-direction: column; gap: 10px; }
+  .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow); }
+  .faq-q { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 20px; cursor: pointer; font-size: clamp(14px,3.5vw,15px); font-weight: 700; color: var(--text); min-height: 56px; user-select: none; -webkit-tap-highlight-color: transparent; }
+  .faq-q:hover { background: var(--surface2); }
+  .faq-q-text { display: flex; align-items: center; gap: 10px; }
+  .faq-q-badge { background: var(--accent); color: #fff; font-size: 12px; font-weight: 800; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .faq-arrow { font-size: 18px; color: var(--text-muted); transition: transform 0.25s; flex-shrink: 0; }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; font-size: clamp(13px,3.3vw,14px); color: var(--text-sub); line-height: 1.7; padding: 0 20px; background: var(--surface2); }
+  .faq-item.open .faq-a { max-height: 300px; padding: 16px 20px; }
+
+  /* ─── LINKS ─── */
+  .link-section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 20px; box-shadow: var(--shadow); display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; }
+  .link-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 10px; font-size: clamp(13px,3.3vw,14px); font-weight: 700; text-decoration: none; min-height: 48px; transition: transform 0.2s, box-shadow 0.2s; }
+  .link-btn:hover { transform: translateY(-2px); }
+  .link-primary { background: var(--accent2); color: #fff; box-shadow: 0 3px 14px rgba(42,107,200,0.3); }
+  .link-primary:hover { box-shadow: 0 6px 20px rgba(42,107,200,0.4); }
+  .link-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+  .link-secondary:hover { background: var(--border); }
+
+  /* ─── HIGHLIGHT ─── */
+  .highlight-box { background: linear-gradient(135deg,#fff9e6,#fff3cc); border: 1px solid #f5c842; border-radius: var(--radius-sm); padding: 14px 18px; margin-top: 16px; font-size: clamp(13px,3.3vw,14px); color: #7a600a; font-weight: 600; display: flex; gap: 10px; align-items: flex-start; }
+
+  /* ─── FOOTER ─── */
+  footer { background: #1a1714; color: rgba(255,255,255,0.5); text-align: center; padding: 28px 16px; font-size: 13px; line-height: 1.7; }
+  footer strong { color: rgba(255,255,255,0.75); }
+  footer a { color: rgba(255,255,255,0.6); }
+</style>
+</head>
+<body>
+
+<!-- TOP INSTAGRAM -->
+<div class="insta-wrap" style="background:#fff3e8; border-bottom:1px solid #f0ddd0;">
+  <p class="insta-label" style="font-weight:700; color:var(--text); font-size:clamp(14px,3.5vw,15px); margin-bottom:4px;">더 많은 꿀정보 얻고 싶다면? 👇</p>
+  <a href="https://www.instagram.com/startup_tip_/" target="_blank" rel="noopener" class="insta-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    @startup_tip_ 팔로우하기
+  </a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">📋 2026 최신 기준</div>
+  <h1>신혼부부 주거지원<br><span>총정리</span></h1>
+  <p class="hero-desc">같은 조건이어도 제도를 아는 신혼부부와 모르는 신혼부부 사이엔<br>최대 <strong style="color:#f5c842;">3억 원</strong>의 차이가 납니다.</p>
+  <div class="stat-grid">
+    <div class="stat-card"><span class="val">6가지</span><span class="lbl">지원 제도 총정리</span></div>
+    <div class="stat-card"><span class="val">4억↑</span><span class="lbl">최대 대출 한도</span></div>
+    <div class="stat-card"><span class="val">1.1%</span><span class="lbl">최저 금리</span></div>
+    <div class="stat-card"><span class="val">7년</span><span class="lbl">혼인 기간 기준</span></div>
+  </div>
+</section>
+
+<main>
+
+<!-- ① 6가지 정책 -->
+<section class="section">
+  <div class="container">
+    <div class="section-title-row">
+      <span class="sec-num">①</span>
+      <h2 class="section-title">6가지 <span>주거지원 제도</span> 상세</h2>
+    </div>
+    <p class="section-desc">각 제도의 조건·한도·금리를 제도별로 따로따로 확인하세요.</p>
+
+    <!-- 01 디딤돌 -->
+    <div class="policy-block pb-blue">
+      <div class="policy-header">
+        <p class="policy-num-badge">01 · 주택 구입</p>
+        <h3>신혼부부 디딤돌 대출</h3>
+        <div class="policy-meta">
+          <strong>대상:</strong> 혼인 7년 이내 또는 예비 신혼부부<br>
+          <strong>소득:</strong> 부부합산 연소득 8,500만 원 이하 (1억 2천으로 확대 공약 추진 중)<br>
+          <strong>자산:</strong> 순자산 5억 1천만 원 이하<br>
+          <strong>주택:</strong> 6억 이하, 전용 85㎡ 이하<br>
+          <strong>한도:</strong> 최대 3.2억 원 · LTV 70% (생애최초 80%) · DTI 60% 이내<br>
+          <strong>기간:</strong> 10 / 15 / 20 / 30년 선택 가능
+        </div>
+        <div class="policy-tag-row">
+          <span class="tag tag-blue">연소득 8,500만↓</span>
+          <span class="tag tag-orange">최대 3.2억</span>
+          <span class="tag tag-green">LTV 최대 80%</span>
+        </div>
+      </div>
+      <div class="policy-table-wrap">
+        <p class="policy-table-label">📊 소득 구간 × 대출 기간별 금리 (연 기준)</p>
+        <p class="scroll-hint">← 좌우로 스크롤하세요 →</p>
+        <table>
+          <thead><tr><th>소득 구간</th><th>10년</th><th>15년</th><th>20년</th><th>30년</th></tr></thead>
+          <tbody>
+            <tr><td>~2천만 원</td><td class="rate-best">2.85%</td><td class="rate-best">2.95%</td><td class="rate-best">3.05%</td><td class="rate-best">3.10%</td></tr>
+            <tr><td>2천~4천만 원</td><td class="rate-good">3.20%</td><td class="rate-good">3.30%</td><td class="rate-good">3.40%</td><td class="rate-good">3.45%</td></tr>
+            <tr><td>4천~7천만 원</td><td class="rate-ok">3.55%</td><td class="rate-ok">3.65%</td><td class="rate-ok">3.75%</td><td class="rate-ok">3.80%</td></tr>
+            <tr><td>7천~8,500만 원</td><td>3.90%</td><td>4.00%</td><td>4.10%</td><td>4.15%</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">※ 소득이 낮을수록 낮은 금리 적용 · 생애최초 주택구입자는 LTV 80% 우대</p>
+      </div>
+    </div>
+
+    <!-- 02 전세자금 -->
+    <div class="policy-block pb-orange">
+      <div class="policy-header">
+        <p class="policy-num-badge">02 · 전세</p>
+        <h3>신혼부부 전세자금 대출</h3>
+        <div class="policy-meta">
+          <strong>대상:</strong> 혼인 7년 이내 또는 3개월 이내 결혼 예정자, 무주택 세대주<br>
+          <strong>소득:</strong> 부부합산 연소득 7,500만 원 이하<br>
+          <strong>자산:</strong> 순자산 3.45억 원 이하<br>
+          <strong>한도:</strong> 수도권 2.5억 / 수도권 외 1.6억 (임차보증금의 80% 이내)
+        </div>
+        <div class="policy-tag-row">
+          <span class="tag tag-orange">연소득 7,500만↓</span>
+          <span class="tag tag-blue">수도권 최대 2.5억</span>
+        </div>
+      </div>
+      <div class="policy-table-wrap">
+        <p class="policy-table-label">📊 지역별 대출 한도 및 금리</p>
+        <p class="scroll-hint">← 좌우로 스크롤하세요 →</p>
+        <table>
+          <thead><tr><th>지역</th><th>최대 한도</th><th>임차보증금 비율</th><th>금리 범위</th></tr></thead>
+          <tbody>
+            <tr class="highlight-row"><td>수도권</td><td>2.5억 원</td><td>80% 이내</td><td class="rate-best">연 1.9% ~ 3.3%</td></tr>
+            <tr><td>수도권 외</td><td>1.6억 원</td><td>80% 이내</td><td class="rate-good">연 1.9% ~ 3.3%</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">※ 금리는 소득·보증금 규모에 따라 차등 적용</p>
+      </div>
+    </div>
+
+    <!-- 03 버팀목 -->
+    <div class="policy-block pb-green">
+      <div class="policy-header">
+        <p class="policy-num-badge">03 · 전세 (저소득 특화)</p>
+        <h3>신혼부부 버팀목 전세자금 대출</h3>
+        <div class="policy-meta">
+          <strong>대상:</strong> 혼인 7년 이내 또는 결혼 예정, 무주택 세대주<br>
+          <strong>소득:</strong> 부부합산 연소득 5,000만 원 이하<br>
+          <strong>자산:</strong> 순자산 3.45억 원 이하<br>
+          <strong>한도:</strong> 수도권 2.5억 / 수도권 외 1.6억 (임차보증금의 80% 이내)
+        </div>
+        <div class="policy-tag-row">
+          <span class="tag tag-green">연소득 5,000만↓</span>
+          <span class="tag tag-orange">저소득 특화</span>
+        </div>
+      </div>
+      <div class="policy-table-wrap">
+        <p class="policy-table-label">📊 지역별 대출 한도 및 금리 (소득·보증금 규모에 따라 차등)</p>
+        <p class="scroll-hint">← 좌우로 스크롤하세요 →</p>
+        <table>
+          <thead><tr><th>지역</th><th>최대 한도</th><th>임차보증금 비율</th><th>금리 범위</th></tr></thead>
+          <tbody>
+            <tr class="highlight-row"><td>수도권</td><td>2.5억 원</td><td>80% 이내</td><td class="rate-best">연 2.5% ~ 3.5%</td></tr>
+            <tr><td>수도권 외</td><td>1.6억 원</td><td>80% 이내</td><td class="rate-good">연 2.5% ~ 3.5%</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">※ 소득이 낮을수록, 임차보증금이 낮을수록 더 낮은 금리 적용</p>
+      </div>
+    </div>
+
+    <!-- 04 신생아 특례 -->
+    <div class="policy-block pb-purple">
+      <div class="policy-header">
+        <p class="policy-num-badge">04 · 출산 가정 특례 ⭐ 모든 제도 중 최강 혜택</p>
+        <h3>신생아 특례대출</h3>
+        <div class="policy-meta">
+          <strong>대상:</strong> 대출 신청일 기준 출산·입양 후 2년 이내 가구<br>
+          <strong>혼인 여부:</strong> 무관 — 사실혼·미혼 출산 가정도 신청 가능<br>
+          <strong>소득:</strong> 부부합산 연소득 2억 원 이하<br>
+          <strong>자산:</strong> 순자산 4억 8,800만 원 이하<br>
+          <strong>주택 구입 한도:</strong> 최대 4억 원 · LTV 70% (생애최초 80%, 수도권·규제지역은 70%)<br>
+          <strong>신청처:</strong> nhuf.molit.go.kr / 국민·우리·신한·농협·기업은행
+        </div>
+        <div class="policy-tag-row">
+          <span class="tag tag-gold">⭐ 전 제도 최저 금리</span>
+          <span class="tag tag-purple">혼인 무관</span>
+          <span class="tag tag-blue">최대 4억</span>
+        </div>
+      </div>
+      <div class="policy-table-wrap">
+        <p class="policy-table-label">📊 주택 구입자금 vs 전세자금 금리 비교</p>
+        <p class="scroll-hint">← 좌우로 스크롤하세요 →</p>
+        <table>
+          <thead><tr><th>구분</th><th>적용 금리</th><th>특례 적용 기간</th><th>최대 한도</th><th>LTV</th></tr></thead>
+          <tbody>
+            <tr class="highlight-row">
+              <td>주택 구입자금</td>
+              <td class="rate-best">연 1.6% ~ 3.3%</td>
+              <td>최초 5년</td>
+              <td>4억 원</td>
+              <td>70% (생초 80%)</td>
+            </tr>
+            <tr>
+              <td>전세자금</td>
+              <td class="rate-best">연 1.1% ~ 3.0%</td>
+              <td>최대 12년</td>
+              <td>수도권 3억</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="table-note">※ 특례 기간 이후 시중금리 전환 · 추가 출산 시 특례 기간 연장 가능</p>
+      </div>
+    </div>
+
+    <!-- 05 서울시 -->
+    <div class="policy-block pb-teal">
+      <div class="policy-header">
+        <p class="policy-num-badge">05 · 서울시 전용 — 고소득도 신청 가능!</p>
+        <h3>서울시 신혼부부 임차보증금 지원</h3>
+        <div class="policy-meta">
+          <strong>대상:</strong> 서울 거주 또는 대출 후 1개월 이내 서울 전입 예정<br>
+          <strong>혼인:</strong> 혼인신고 7년 이내 또는 6개월 이내 결혼 예정자<br>
+          <strong>소득:</strong> 부부합산 연소득 1억 3천만 원 이하<br>
+          <strong>자격:</strong> 부부 모두 무주택<br>
+          <strong>주택:</strong> 서울시 내 임차보증금 7억 이하 (주택 또는 주거용 오피스텔)
+        </div>
+        <div class="policy-tag-row">
+          <span class="tag tag-teal">연소득 1.3억↓</span>
+          <span class="tag tag-green">최대 3억</span>
+          <span class="tag tag-orange">서울 한정</span>
+        </div>
+      </div>
+      <div class="policy-table-wrap">
+        <p class="policy-table-label">📊 대출 한도 및 이자 지원 내용</p>
+        <p class="scroll-hint">← 좌우로 스크롤하세요 →</p>
+        <table>
+          <thead><tr><th>항목</th><th>내용</th></tr></thead>
+          <tbody>
+            <tr><td>대출 한도</td><td>임차보증금의 90% 이내, <strong>최대 3억 원</strong></td></tr>
+            <tr class="highlight-row"><td>이자 지원 금리</td><td class="rate-good">연 4.5% 이하</td></tr>
+            <tr><td>월 최대 지원액</td><td><strong>30만 원</strong></td></tr>
+            <tr><td>지원 기간</td><td>최대 <strong>12개월</strong></td></tr>
+            <tr class="highlight-row"><td>연간 최대 지원액</td><td class="rate-ok"><strong>연 360만 원</strong></td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">※ 일반 대출 소득 기준 초과자도 신청 가능한 서울시 전용 제도</p>
+      </div>
+    </div>
+
+    <!-- 06 공공임대 -->
+    <div class="policy-block pb-red">
+      <div class="policy-header">
+        <p class="policy-num-badge">06 · 임대주택</p>
+        <h3>신혼부부 공공 임대주택</h3>
+        <div class="policy-meta">
+          <strong>공통 자격:</strong> 혼인 7년 이내 무주택 신혼부부<br>
+          <strong>공통 조건:</strong> 자동차가액 3,803만 원 이하<br>
+          <strong>청년안심주택:</strong> 서울시 공급, 역세권·간선도로변 위치<br>
+          <strong>민간임대 일반공급:</strong> 소득·자산·지역 무관, 무작위 추첨
+        </div>
+        <div class="policy-tag-row">
+          <span class="tag tag-orange">시세 30~85%</span>
+          <span class="tag tag-blue">LH / 서울시</span>
+        </div>
+      </div>
+      <div class="policy-table-wrap">
+        <p class="policy-table-label">📊 공공 임대주택 종류별 비교</p>
+        <p class="scroll-hint">← 좌우로 스크롤하세요 →</p>
+        <table>
+          <thead><tr><th>종류</th><th>임대료 수준</th><th>주요 대상</th><th>신청처</th></tr></thead>
+          <tbody>
+            <tr><td>공공임대 (LH)</td><td class="rate-ok">시세 30~70%</td><td>혼인 7년 이내 무주택</td><td>LH청약플러스</td></tr>
+            <tr><td>행복주택 (LH)</td><td class="rate-ok">시세 대비 저렴</td><td>청년·신혼부부</td><td>LH청약플러스</td></tr>
+            <tr class="highlight-row"><td>신혼부부 특별공급</td><td class="rate-good">시세 대비 저렴</td><td>청약통장 보유자</td><td>청약홈</td></tr>
+            <tr><td>청년안심주택 공공형</td><td class="rate-ok">시세 30~70%</td><td>서울 거주</td><td>서울주거포털</td></tr>
+            <tr><td>청년안심주택 민간형 특공</td><td class="rate-good">시세 약 75%</td><td>소득·자산 기준 충족</td><td>서울주거포털</td></tr>
+            <tr><td>청년안심주택 민간형 일반</td><td>시세 약 85%</td><td>소득·자산 무관 (추첨)</td><td>서울주거포털</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">※ 민간임대형 일반공급은 소득·자산 초과자도 무작위 추첨으로 신청 가능</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ② 신청 가능/불가 -->
+<section class="section">
+  <div class="container">
+    <div class="section-title-row">
+      <span class="sec-num">②</span>
+      <h2 class="section-title">신청 <span>가능 vs 불가</span> 조건</h2>
+    </div>
+    <p class="section-desc">주요 자격 조건을 한눈에 확인하세요.</p>
+    <div class="use-grid">
+      <div class="use-box">
+        <h4><span class="use-dot dot-green"></span>신청 가능한 경우</h4>
+        <ul class="use-list">
+          <li><span class="use-icon">✅</span>혼인신고일로부터 7년 이내</li>
+          <li><span class="use-icon">✅</span>혼인 예정자 (3~6개월 이내)</li>
+          <li><span class="use-icon">✅</span>무주택 세대주 (또는 세대원)</li>
+          <li><span class="use-icon">✅</span>소득·자산 기준 충족자</li>
+          <li><span class="use-icon">✅</span>출산·입양 후 2년 이내 (신생아 특례)</li>
+          <li><span class="use-icon">✅</span>사실혼·미혼 출산 가구 (신생아 특례)</li>
+          <li><span class="use-icon">✅</span>생애최초 주택구입자 (LTV 우대)</li>
+          <li><span class="use-icon">✅</span>자동차가액 3,803만 원 이하 (공공임대)</li>
+        </ul>
+      </div>
+      <div class="use-box">
+        <h4><span class="use-dot dot-red"></span>신청 불가한 경우</h4>
+        <ul class="use-list">
+          <li><span class="use-icon">❌</span>유주택자 (본인 또는 배우자)</li>
+          <li><span class="use-icon">❌</span>혼인 7년 초과 (일반 신혼 대출)</li>
+          <li><span class="use-icon">❌</span>소득 기준 초과 (제도별 상이)</li>
+          <li><span class="use-icon">❌</span>순자산 기준 초과 (제도별 상이)</li>
+          <li><span class="use-icon">❌</span>주택가격 6억 초과 (디딤돌 대출)</li>
+          <li><span class="use-icon">❌</span>전용면적 85㎡ 초과 (디딤돌 대출)</li>
+          <li><span class="use-icon">❌</span>자동차가액 3,803만 원 초과 (공공임대)</li>
+          <li><span class="use-icon">❌</span>서울 외 거주자 (서울시 지원)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="highlight-box">⚡ <span>신생아 특례대출은 혼인신고 여부와 무관! 미혼 출산·사실혼 가정도 해당됩니다.</span></div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ③ 꿀팁 -->
+<section class="section" style="background:var(--surface2);">
+  <div class="container">
+    <div class="section-title-row">
+      <span class="sec-num">③</span>
+      <h2 class="section-title">놓치면 손해! <span>꿀팁 4가지</span></h2>
+    </div>
+    <p class="section-desc">제도를 200% 활용하는 현실적인 전략</p>
+    <div class="tip-grid">
+      <div class="tip-card"><span class="tip-icon">🍯</span><div><h4>중복 수혜 노리기</h4><p>디딤돌 대출 후 자녀 출산 시 신생아 특례로 갈아탈 수 있어요. 두 제도를 순차 활용하면 금리를 크게 낮출 수 있습니다.</p></div></div>
+      <div class="tip-card"><span class="tip-icon">📅</span><div><h4>결혼 전 먼저 신청</h4><p>'결혼 예정자'도 신청 가능합니다. 혼인신고 3~6개월 전에 미리 신청해두면 입주 타이밍을 맞출 수 있어요.</p></div></div>
+      <div class="tip-card"><span class="tip-icon">🏙️</span><div><h4>서울시 제도는 고소득도 OK</h4><p>서울시 임차보증금 지원은 부부합산 1억 3천만 원 이하까지 가능해 일반 제도 탈락자도 신청할 수 있어요.</p></div></div>
+      <div class="tip-card"><span class="tip-icon">🎯</span><div><h4>청년안심주택 일반공급 주목</h4><p>소득·자산 기준 미충족 시에도 일반공급(무작위 추첨)으로 시세 75~85% 수준의 민간임대에 입주할 수 있어요.</p></div></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ④ 체크리스트 -->
+<section class="section">
+  <div class="container">
+    <div class="section-title-row">
+      <span class="sec-num">④</span>
+      <h2 class="section-title">신청 전 <span>체크리스트</span></h2>
+    </div>
+    <p class="section-desc">하나씩 클릭하며 준비 상황을 확인하세요.</p>
+    <div class="checklist">
+      <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">혼인신고 완료 또는 결혼 예정일 확인</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">부부합산 연소득 계산 (근로소득 + 사업소득 + 기타)</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">순자산 파악 (부동산 + 금융 − 부채)</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">무주택 여부 확인 (부부 모두)</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">청약통장 가입 및 납입 횟수 확인 (공공분양 특공용)</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">자동차가액 3,803만 원 이하 확인 (공공임대 신청 시)</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">신생아 특례 해당 여부 확인 (출산·입양 2년 이내)</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">주택도시기금 홈페이지 회원가입 완료</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">필요 서류 준비 (혼인관계증명서, 소득 확인서류, 주민등록등본)</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">취급 은행 사전 상담 예약 (국민·우리·신한·농협·기업은행)</span></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ⑤ FAQ -->
+<section class="section" style="background:var(--surface2);">
+  <div class="container">
+    <div class="section-title-row">
+      <span class="sec-num">⑤</span>
+      <h2 class="section-title">자주 묻는 질문 <span>FAQ</span></h2>
+    </div>
+    <p class="section-desc">헷갈리는 질문만 모았습니다.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)"><span class="faq-q-text"><span class="faq-q-badge">Q</span>디딤돌 대출과 신생아 특례 중 어떤 게 더 유리한가요?</span><span class="faq-arrow">▾</span></div>
+        <div class="faq-a">자녀가 있다면 신생아 특례가 압도적으로 유리합니다. 금리가 최저 1.6%(구입)~1.1%(전세)로, 디딤돌 최저 금리(2.85%)보다 낮고 한도도 최대 4억으로 더 높습니다. 출산 예정이라면 디딤돌로 먼저 구입 후 출산 후 신생아 특례로 대환하는 전략도 가능합니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)"><span class="faq-q-text"><span class="faq-q-badge">Q</span>전세자금 대출과 버팀목 대출의 차이는 무엇인가요?</span><span class="faq-arrow">▾</span></div>
+        <div class="faq-a">두 제도 모두 전세 목적이지만 소득 기준이 다릅니다. 일반 신혼부부 전세자금 대출은 연소득 7,500만 원 이하, 버팀목은 5,000만 원 이하가 대상입니다. 소득이 낮다면 버팀목, 그 이상이면 일반 전세자금 대출을 검토하세요. 금리 범위는 버팀목이 2.5%~3.5%, 전세자금이 1.9%~3.3%입니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)"><span class="faq-q-text"><span class="faq-q-badge">Q</span>예비 신혼부부도 바로 신청할 수 있나요?</span><span class="faq-arrow">▾</span></div>
+        <div class="faq-a">네, 가능합니다. 대부분의 제도가 3개월~6개월 이내 결혼 예정자에게도 신청 자격을 부여합니다. 다만 실행일(잔금일) 전까지 혼인신고를 완료해야 하는 경우가 많으므로 반드시 개별 제도 조건을 확인하세요.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)"><span class="faq-q-text"><span class="faq-q-badge">Q</span>신생아 특례대출은 미혼 출산도 가능한가요?</span><span class="faq-arrow">▾</span></div>
+        <div class="faq-a">네, 가능합니다. 2026년 기준 신생아 특례대출은 혼인신고 여부와 관계없이 출산 또는 입양 후 2년 이내인 가구라면 사실혼·미혼 출산 가정도 신청할 수 있습니다. 소득(부부합산 2억 이하)·자산 기준은 동일하게 적용됩니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)"><span class="faq-q-text"><span class="faq-q-badge">Q</span>서울시 지원은 서울 외 거주자도 신청되나요?</span><span class="faq-arrow">▾</span></div>
+        <div class="faq-a">서울시 임차보증금 지원은 대출 후 1개월 이내 서울 전입 예정자도 신청 가능합니다. 현재 서울 거주자가 아니어도 서울 내 주택을 임차하고 전입 예정이라면 신청할 수 있습니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)"><span class="faq-q-text"><span class="faq-q-badge">Q</span>청년안심주택 일반공급은 소득 기준이 없나요?</span><span class="faq-arrow">▾</span></div>
+        <div class="faq-a">민간임대형 일반공급은 소득·자산·지역 순위 없이 무작위 추첨으로 진행됩니다. 소득·자산이 기준을 초과해 특별공급 신청이 불가한 분들도 일반공급으로는 도전할 수 있습니다. 단, 임대료는 시세의 약 85% 수준으로 특별공급(75%)보다 높습니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ⑥ 공식 링크 -->
+<section class="section">
+  <div class="container">
+    <div class="section-title-row">
+      <span class="sec-num">⑥</span>
+      <h2 class="section-title">공식 <span>신청 바로가기</span></h2>
+    </div>
+    <p class="section-desc">공식 채널에서 정확한 정보를 확인하고 신청하세요.</p>
+    <div class="link-section">
+      <a href="https://nhuf.molit.go.kr" target="_blank" rel="noopener" class="link-btn link-secondary">🏦 주택도시기금 홈페이지</a>
+      <a href="https://apply.lh.or.kr" target="_blank" rel="noopener" class="link-btn link-secondary">🏠 LH청약플러스</a>
+      <a href="https://www.applyhome.co.kr" target="_blank" rel="noopener" class="link-btn link-secondary">📋 청약홈 (공공분양)</a>
+      <a href="https://housing.seoul.go.kr" target="_blank" rel="noopener" class="link-btn link-secondary">🗼 서울주거포털</a>
+      <a href="https://sba.seoul.kr/smallhouse" target="_blank" rel="noopener" class="link-btn link-secondary">🌟 청년안심주택</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM INSTAGRAM -->
+<div class="insta-wrap" style="background:linear-gradient(135deg,#fff8f5,#fff3f8); border-top:1px solid #f0ddd0; padding:32px 16px;">
+  <p class="insta-label" style="font-size:clamp(14px,3.5vw,16px); color:var(--text); font-weight:700; margin-bottom:4px;">더 많은 꿀정보 얻고 싶다면? 🍯</p>
+  <p class="insta-label" style="margin-bottom:16px;">부동산·창업·재테크 정보를 매일 업데이트해요!</p>
+  <a href="https://www.instagram.com/startup_tip_/" target="_blank" rel="noopener" class="insta-btn" style="font-size:clamp(15px,4vw,18px); padding:16px 36px;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:26px;height:26px;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    @startup_tip_ 팔로우하기
+  </a>
+</div>
+
+</main>
+
+<footer>
+  <strong>신혼부부 주거지원 총정리 2026</strong><br>
+  본 자료는 정보 제공 목적으로 작성되었습니다.<br>
+  정확한 신청 조건은 주택도시기금 및 각 기관 공식 채널에서 반드시 확인하세요.<br><br>
+  © 2026 startup_tip_ · <a href="https://www.instagram.com/startup_tip_/" target="_blank" rel="noopener">Instagram</a>
+</footer>
+
+<script>
+  function toggleCheck(el) {
+    el.classList.toggle('checked');
+    el.querySelector('.check-box').classList.toggle('checked');
+  }
+  function toggleFAQ(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
